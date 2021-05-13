@@ -15,7 +15,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
         scaffoldBackgroundColor: Colors.white,
-        primaryColor: kTPrimaryColor,
+        primaryColor: kPrimaryColor,
+        textTheme: TextTheme(
+          headline5: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+          button: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       home: HomeScreen(),
     );
