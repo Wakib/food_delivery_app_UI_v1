@@ -1,4 +1,4 @@
-## Welcome - Login Screen
+## Food Delivery App
 
 I've done this Flutter UI project for educational purpose.
 
