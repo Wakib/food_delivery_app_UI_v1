@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../components/category_widget.dart';
 import '../constants.dart';
+import '../components/food_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.only(right: 20.0, top: 50.0),
@@ -21,12 +23,9 @@ class HomeScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Simple way to find \nTasty food',
-                style: Theme.of(context).textTheme.headline5,
-              ),
+            child: Text(
+              'Simple way to find \nTasty food',
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           SingleChildScrollView(
@@ -45,11 +44,25 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Container(
+            alignment: Alignment.centerLeft,
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             height: 50,
+            width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: kBorderColor),
+            ),
+            child: SvgPicture.asset('assets/icons/search.svg'),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                FoodCardWidget(),
+                FoodCardWidget(),
+                FoodCardWidget(),
+              ],
             ),
           ),
         ],
