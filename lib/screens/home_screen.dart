@@ -59,9 +59,25 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                FoodCardWidget(),
-                FoodCardWidget(),
-                FoodCardWidget(),
+                FoodCardWidget(
+                  title: 'Vegan salad bowl',
+                  ingredient: 'red tomato',
+                  image: 'assets/images/image_1.png',
+                  price: 20,
+                  calories: '420Kcal',
+                  description:
+                      'Lorem ipsum dolor sitamet, consectetur adipiscing elit. Nullam quis lectus posuere tristique mauris sed ultrices ante sed imperdiet faucibus mi eu consectetur',
+                ),
+                FoodCardWidget(
+                  title: 'Salad vegan bowl',
+                  ingredient: 'red tomato',
+                  image: 'assets/images/image_2.png',
+                  price: 20,
+                  calories: '380Kcal',
+                  description:
+                      'Lorem ipsum dolor sitamet, consectetur adipiscing elit. Nullam quis lectus posuere tristique mauris sed ultrices ante sed imperdiet faucibus mi eu consectetur',
+                ),
+                SizedBox(width: 20),
               ],
             ),
           ),

@@ -2,6 +2,21 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class FoodCardWidget extends StatelessWidget {
+  final String title;
+  final String ingredient;
+  final String image;
+  final int price;
+  final String calories;
+  final String description;
+
+  FoodCardWidget(
+      {this.title,
+      this.ingredient,
+      this.image,
+      this.price,
+      this.calories,
+      this.description});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +57,7 @@ class FoodCardWidget extends StatelessWidget {
               width: 276,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/image_1.png'),
+                  image: AssetImage(image),
                 ),
               ),
             ),
@@ -51,7 +66,7 @@ class FoodCardWidget extends StatelessWidget {
             right: 20,
             top: 80,
             child: Text(
-              '\$20',
+              '\$$price',
               style: Theme.of(context).textTheme.headline5.copyWith(
                     color: kPrimaryColor,
                   ),
@@ -66,18 +81,18 @@ class FoodCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Vegan salad bowl',
+                    title,
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   Text(
-                    'with red tomato',
+                    'with $ingredient',
                     style: TextStyle(
                       color: kTextColor.withOpacity(.4),
                     ),
                   ),
                   SizedBox(height: 15),
                   Text(
-                    'Lorem ipsum dolor sitamet, consectetur adipiscing elit. Nullam quis lectus posuere tristique mauris sed ultrices ante sed imperdiet faucibus mi eu consectetur',
+                    description,
                     maxLines: 3,
                     style: TextStyle(
                       color: kTextColor.withOpacity(.65),
@@ -85,7 +100,7 @@ class FoodCardWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 12),
                   Text(
-                    '420Kcal',
+                    calories,
                     style: TextStyle(
                       color: kTextColor.withOpacity(.65),
                     ),
