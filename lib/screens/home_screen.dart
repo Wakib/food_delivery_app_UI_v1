@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../components/category_widget.dart';
 import '../constants.dart';
 import '../components/food_card_widget.dart';
+import 'details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               alignment: Alignment.topRight,
               child: SvgPicture.asset(
                 'assets/icons/menu.svg',
-                height: 14,
+                height: 12,
               ),
             ),
           ),
@@ -77,6 +78,14 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 FoodCardWidget(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return DetailsScreen();
+                      }),
+                    );
+                  },
                   title: 'Vegan salad bowl',
                   ingredient: 'red tomato',
                   image: 'assets/images/image_1.png',
@@ -86,6 +95,7 @@ class HomeScreen extends StatelessWidget {
                       'Lorem ipsum dolor sitamet, consectetur adipiscing elit. Nullam quis lectus posuere tristique mauris sed ultrices ante sed imperdiet faucibus mi eu consectetur',
                 ),
                 FoodCardWidget(
+                  onTap: () {},
                   title: 'Salad vegan bowl',
                   ingredient: 'red tomato',
                   image: 'assets/images/image_2.png',
